@@ -61,7 +61,11 @@
 
   from_add = username
   to_add = ["thespctrl@gmail.com"]
-  email_conn.sendmail(from_add,to_add,"Greetings, All Your Base are belong to Us!")
+  email_conn2.sendmail(from_add,to_add,"Greetings, All Your Base are belong to Us!")
+  
+# Logging out of our email service
+
+  email_conn2.quit()
 
 # Handling Exceptions in Code
 
@@ -79,7 +83,7 @@
 # Logging into our email service
  try:
      email_conn3.login(username, "incorrect_password")
-     email_conn.sendmail(from_add,to_add,"Greetings, All Your Base are belong to Us!")
+     email_conn3.sendmail(from_add,to_add,"Greetings, All Your Base are belong to Us!")
 
  except SMTPAuthenticationError:
      print("Could Not Login")
@@ -87,4 +91,6 @@
  except:
      print("Oops... An Error Ocurred")
 
- email_conn.quit()
+ # Logging out of our email service
+
+   email_conn3.quit()
